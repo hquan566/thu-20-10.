@@ -1,30 +1,88 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Thư 20/10 - Dành tặng MThu</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thư 20/10 💌</title>
+  <style>
+    body {
+      background-color: #ffe6f2;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+      color: #b30059;
+      overflow-x: hidden;
+      margin: 0;
+    }
+    h1 {
+      margin-top: 30px;
+      font-size: 26px;
+      animation: fadeIn 2s ease-in-out;
+    }
+    p {
+      font-size: 18px;
+      width: 80%;
+      max-width: 500px;
+      margin: 10px auto 0;
+      line-height: 1.6;
+      animation: fadeIn 3s ease-in-out;
+    }
+    img {
+      width: 220px;
+      border-radius: 10px;
+      margin-top: 30px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .heart {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      background-color: #ff6699;
+      transform: rotate(45deg);
+      animation: fall 5s linear infinite;
+      bottom: 100%;
+    }
+    .heart::before, .heart::after {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #ff6699;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -7px;
+      left: 0;
+    }
+    .heart::after {
+      left: -7px;
+      top: 0;
+    }
+    @keyframes fall {
+      0% {transform: translateY(0) rotate(45deg);}
+      100% {transform: translateY(100vh) rotate(45deg);}
+    }
+  </style>
 </head>
 <body>
-  <div class="page">
-    <div class="card">
-      <div class="left">
-        <h1>Nhân dịp 20/10</h1>
-        <p class="message">Nhân dịp 20/10 HQ chúc MThu có thật nhiều niềm vui, hạnh phúc và luôn rạng rỡ như một bông hoa nhé &lt;3</p>
-        <p class="from">— Yêu thương, HQ</p>
-      </div>
-      <div class="right">
-        <div class="photo-wrap">
-          <img src="photo.jpg" alt="Ảnh tặng MThu">
-        </div>
-      </div>
-    </div>
-    <footer class="hint">Quét mã QR để mở trang này.</footer>
-  </div>
-
-  <!-- falling hearts -->
-  <canvas id="hearts"></canvas>
-  <script src="script.js"></script>
+  <h1>💐 Chúc mừng ngày 20/10 💐</h1>
+  <p>Nhân dịp 20/10, HQ chúc MThu có thật nhiều niềm vui, hạnh phúc và luôn rạng rỡ như một bông hoa nhé ><</p>
+  <img src="photo.jpg" alt="Ảnh kỷ niệm">
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }
+    setInterval(createHeart, 300);
+  </script>
 </body>
 </html>
+  
