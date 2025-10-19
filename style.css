@@ -1,0 +1,22 @@
+
+/* style.css */
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial}
+body{background:linear-gradient(180deg,#fff0f6 0%, #ffeef8 50%);display:flex;align-items:center;justify-content:center;padding:30px}
+.page{max-width:900px;width:100%}
+.card{display:flex;gap:20px;background:rgba(255,255,255,0.9);border-radius:18px;padding:24px;box-shadow:0 6px 20px rgba(0,0,0,0.08);align-items:center}
+.left{flex:1;padding:10px}
+.right{flex:0 0 320px;display:flex;align-items:center;justify-content:center}
+h1{margin:0 0 12px;font-size:28px;color:#ff5a9e;letter-spacing:0.5px}
+.message{font-size:18px;color:#333;line-height:1.6;background:linear-gradient(90deg,#fff 60%, rgba(255,90,158,0.04) 100%);padding:12px;border-radius:10px}
+.from{margin-top:10px;color:#ff5a9e;font-weight:600}
+.photo-wrap{width:280px;height:280px;border-radius:12px;overflow:hidden;border:6px solid rgba(255,255,255,0.6);box-shadow:0 8px 18px rgba(255,90,158,0.12)}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;display:block}
+.hint{margin-top:12px;text-align:center;color:#c65b86;font-size:14px}
+
+/* responsive */
+@media (max-width:700px){
+  .card{flex-direction:column}
+  .right{flex:unset;width:100%}
+  .photo-wrap{width:100%;height:260px}
+}
